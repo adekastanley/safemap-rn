@@ -1,9 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
+import { ThemedView } from "@/components/ThemedView";
+import { ThemedText } from "@/components/ThemedText";
+
 const Map = () => {
 	return (
-		<View>
-			<Text>Map</Text>
-		</View>
+		<ThemedView>
+			<ThemedText>Map</ThemedText>
+		</ThemedView>
 	);
 };
 export default Map;
