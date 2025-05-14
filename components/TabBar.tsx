@@ -18,6 +18,7 @@ export default function TabBar({
 	const icon = {
 		home: () => <Feather name="home" size={24} color={"#222"} />,
 		explore: () => <Feather name="compass" size={24} color={"#222"} />,
+		profile: () => <Feather name="user" size={24} color={"#222"} />,
 	};
 	return (
 		<View style={styles.tabbar}>
@@ -63,9 +64,17 @@ export default function TabBar({
 						style={styles.tabbarItem}
 					>
 						<Feather
-							name={route.name == "map" ? "map" : "compass"}
+							// name={route.name == "map" ? "map" : "compass"}
+							name={
+								route.name === "map"
+									? "map"
+									: route.name === "profile"
+									? "user"
+									: "compass"
+							}
 							size={24}
 							color={isFocused ? "red" : "black"}
+							// style={{ backgroundColor: "blue", width: "full" }}
 						/>
 
 						{/* <Text style={{ color: isFocused ? colors.primary : colors.text }}>
@@ -80,16 +89,17 @@ export default function TabBar({
 
 const styles = StyleSheet.create({
 	tabbar: {
-		position: "relative",
+		position: "absolute",
 		gap: "5rem",
-		// width: "40%",
+		width: "40%",
 		marginHorizontal: "auto",
-		bottom: 50,
+		bottom: 30,
+		left: "30%",
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
 		backgroundColor: "#fff",
-		padding: 15,
+		padding: 5,
 		borderRadius: 35,
 		shadowColor: "#000",
 		shadowOffset: { width: 0, height: 10 },
@@ -99,5 +109,8 @@ const styles = StyleSheet.create({
 	tabbarItem: {
 		flex: 1,
 		alignItems: "center",
+		// backgroundColor: "red",
+		height: "auto",
+		padding: 10,
 	},
 });
