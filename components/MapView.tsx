@@ -19,7 +19,7 @@ if (Platform.OS !== "web") {
 	PROVIDER_GOOGLE = RNMaps.PROVIDER_GOOGLE;
 }
 
-// For web, we need to use a different library
+// For web, we  use a different library
 import GoogleMapReact from "google-map-react";
 
 interface Props {
